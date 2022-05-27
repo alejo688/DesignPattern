@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Earn\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Earn\" />
+  </ItemGroup>
 </Project>

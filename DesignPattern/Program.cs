@@ -1,10 +1,11 @@
 ﻿using System;
+using DesignPattern.FactoryPattern;
 
 namespace DesignPattern
 {
     class Program
     {
-        static void Main(string[] args)
+        public void ExecSingleton()
         {
             var log = Singleton.Log.Instance;
             log.Save("a");
@@ -14,6 +15,18 @@ namespace DesignPattern
             var b = Singleton.Singleton.Instance;
 
             Console.WriteLine(a == b);
+        }
+
+        static void Main(string[] args)
+        {
+            SaleFactory storeSaleFactory = new StoreSaleFactory(10);
+            SaleFactory internetSaleFactory = new InternetSaleFactory(2);
+
+            ISale sale1 = storeSaleFactory.GetSale();
+            sale1.Sell(15);
+
+            ISale sale2 = internetSaleFactory.GetSale();
+            sale2.Sell(15);
         }
     }
 }
